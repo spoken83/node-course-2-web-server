@@ -38,19 +38,24 @@ app.get('/', (req, resp) => {
   //   ]
   // });
   resp.render('home.hbs', {
-    pageTitle: 'Home Pagge',
+    pageTitle: 'Home Page',
     welcomeMessage: 'Hello, Welcome',
     currentYear: new Date().getFullYear()
   });
 })
 app.get('/about', (req,resp) => {
   resp.render('about.hbs', {
-    pageTitle: 'About Pagge',
+    pageTitle: 'About Page',
     currentYear: new Date().getFullYear()
   });
-
-  //resp.send('About page')
 })
+app.get('/project', (req,resp) => {
+  resp.render('project.hbs', {
+    pageTitle: 'Project Page',
+    currentYear: new Date().getFullYear()
+  });
+})
+
 app.get('/bad', (req, resp) => {
   resp.send({
     error:  'Sorry, bad request'
